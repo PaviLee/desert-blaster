@@ -1,69 +1,91 @@
-package spaceBlasters_ship_MML;
+package desertBlasters_ship_MML;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
-import javax.swing.JPanel;
+import javax.swing.JFrame;
 
 /**
- * A specialized JPanel that is used to display an image as its background.
+ * A specialized BackgroundPanel that allows the user to get its graphics. With
+ * graphics, the user can draw onto the Screen.
  * 
- * @author Rissa Li
+ * @author Clarissa Li
  * @version May 26, 2020
- *
  */
-public class BackgroundPanel extends JPanel {
+public class Screen extends BackgroundPanel {
 
-	private static final long serialVersionUID = -4623646467273651538L;
+	private static final long serialVersionUID = -7577759854950579746L;
+	private static final int transparent = 0x00000000;
 
+	private JFrame frame;
 	private BufferedImage bImage;
+	private Graphics screenGraphics;
 
 	/**
-	 * Creates a BackgroundPanel.
+	 * Creates a Screen.
 	 * 
 	 * @param width
-	 *            int width of BackgroundPanel
+	 *            int width of Screen
 	 * @param height
-	 *            int height of BackgroundPanel
+	 *            int height of Screen
 	 */
-	public BackgroundPanel(int width, int height) {
-		super();
-		try {
-			bImage = ImageIO.read(getClass().getResource("/images/background.jpg"));
-			bImage = resize(bImage, width, height);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public Screen(int width, int height) {
+		super(width, height);
+
+		frame = new JFrame();
+		frame.setBounds(0, 0, 0, 0); // Width and height irrelevant
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+
+		setPreferredSize(new Dimension(width, height));
+		frame.add(this);
+		frame.pack();
+		frame.setVisible(true);
+
+		bImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		screenGraphics = bImage.getGraphics();
+		((Graphics2D) screenGraphics).setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+				RenderingHints.VALUE_ANTIALIAS_ON);
 	}
 
 	/**
-	 * Returns a resized version of the inputed image.
+	 * Returns the JFrame.
 	 * 
-	 * @param img
-	 *            BufferedImage to resize
-	 * @param width
-	 *            new width
-	 * @param height
-	 *            new height
-	 * @return a resized BufferedImage.
+	 * @return JFrame of the Screen.
 	 */
-	private static BufferedImage resize(BufferedImage img, int width, int height) {
-		Image temp = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-		BufferedImage resized = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-		Graphics2D g2d = resized.createGraphics();
-		g2d.drawImage(temp, 0, 0, null);
-		g2d.dispose();
-		return resized;
+	public JFrame getJFrame() {
+		return frame;
+	}
+
+	/**
+	 * Returns graphics for the Screen.
+	 * 
+	 * @return graphics for the Screen.
+	 */
+	public Graphics getScreenGraphics() {
+		return screenGraphics;
+	}
+
+	/**
+	 * Clears the Screen.
+	 */
+	public void clearScreen() {
+		int row, col;
+		for (col = 0; col < bImage.getWidth(); col++) {
+			for (row = 0; row < bImage.getHeight(); row++) {
+				bImage.setRGB(col, row, transparent);
+			}
+		}
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 * @see
+	 * desertBlasters_ship_MML.BackgroundPanel#paintComponent(java.awt.Graphics)
 	 */
 	@Override
 	protected void paintComponent(Graphics g) {
