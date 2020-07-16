@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  * graphics, the user can draw onto the Screen.
  * 
  * @author Rissa Li
- * @version May 26, 2020
+ * @version July 16, 2020
  */
 public class Screen extends BackgroundPanel {
 
