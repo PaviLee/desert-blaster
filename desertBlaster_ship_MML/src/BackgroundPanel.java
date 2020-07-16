@@ -33,7 +33,7 @@ public class BackgroundPanel extends JPanel {
 	public BackgroundPanel(int width, int height) {
 		super();
 		try {
-			bImage = ImageIO.read(getClass().getResource("/images/background.jpg"));
+			bImage = ImageIO.read(getClass().getResource("/images/desert.jpg"));
 			bImage = resize(bImage, width, height);
 		} catch (IOException e) {
 			e.printStackTrace();
