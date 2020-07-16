@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 /**
  * A specialized JPanel that is used to display an image as its background.
  * 
- * @author Clarissa Li
+ * @author Rissa Li
  * @version May 26, 2020
  *
  */
