@@ -1,4 +1,4 @@
-package spaceBlasters_ship_MML;
+package desertBlasters_ship_MML;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -84,7 +84,8 @@ public class Screen extends BackgroundPanel {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see spaceBlasters.BackgroundPanel#paintComponent(java.awt.Graphics)
+	 * @see
+	 * desertBlasters_ship_MML.BackgroundPanel#paintComponent(java.awt.Graphics)
 	 */
 	@Override
 	protected void paintComponent(Graphics g) {
