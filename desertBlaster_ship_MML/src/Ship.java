@@ -10,7 +10,6 @@ import java.awt.event.MouseMotionListener;
  * 
  * @author Rissa Li
  * @version July 16, 2020
- *
  */
 public class Ship implements MouseMotionListener {
 
