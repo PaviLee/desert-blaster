@@ -3,7 +3,7 @@ package desertBlasters_part1_ship_MML;
 import java.awt.Graphics;
 
 /**
- * Run Desert Blasters from this class.
+ * Run Desert Blaster from this class.
  * 
  * @author Rissa Li
  * @version July 16, 2020
