@@ -2,6 +2,12 @@ package desertBlasters_part1_ship_MML;
 
 import java.awt.Graphics;
 
+/**
+ * Run Desert Blasters from this class.
+ * 
+ * @author Rissa Li
+ * @version July 16, 2020
+ */
 public class Main {
 
 	public static final int SCREEN_WIDTH = 800;
