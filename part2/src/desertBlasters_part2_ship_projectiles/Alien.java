@@ -52,7 +52,7 @@ public class Alien extends Projectile {
 		if (Math.random() <= 0.04) {
 			laser = new Laser(x, y + alienHeight / 2, 6);
 		}
-		if(laser!=null) {
+		if(laser != null) {
 			laser.move();
 			laser.draw(g);
 		}
