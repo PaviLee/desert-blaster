@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
  * Represents a Laser.
  * 
  * @author Rissa Li
- *
+ * @version July 21, 2020
  */
 public class Laser extends Projectile {
 
@@ -45,7 +45,8 @@ public class Laser extends Projectile {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see desertBlasters_part2_ship_projectiles.Projectile#draw(java.awt.Graphics)
+	 * @see
+	 * desertBlasters_part2_ship_projectiles.Projectile#draw(java.awt.Graphics)
 	 */
 	@Override
 	public void draw(Graphics g) {
