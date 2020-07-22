@@ -45,17 +45,22 @@ public class Alien extends Projectile {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see desertBlasters_part2_ship_projectiles.Projectile#draw(java.awt.Graphics)
+	 * @see
+	 * desertBlasters_part2_ship_projectiles.Projectile#draw(java.awt.Graphics)
 	 */
 	@Override
 	public void draw(Graphics g) {
-		if (Math.random() <= 0.04) {
-			laser = new Laser(x, y + alienHeight / 2, 6);
-		}
-		if(laser != null) {
+		shootLaser();
+		if (laser != null) {
 			laser.move();
 			laser.draw(g);
 		}
 		g.drawImage(image, x - alienWidth / 2, y - alienHeight / 2, null);
+	}
+
+	public void shootLaser() {
+		if (Math.random() <= 0.02) {
+			laser = new Laser(x, y + alienHeight / 2, 6);
+		}
 	}
 }
