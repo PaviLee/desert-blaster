@@ -64,6 +64,14 @@ public class Main {
 		showEndScreen(g, screen);
 	}
 
+	/**
+	 * Shows the end screen.
+	 * 
+	 * @param g
+	 *            Graphics
+	 * @param screen
+	 *            Screen
+	 */
 	public static void showEndScreen(Graphics g, Screen screen) {
 		g.drawImage(endScreenImage,
 				screenWidth / 2 - endScreenImage.getWidth() / 2,
