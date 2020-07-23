@@ -66,14 +66,4 @@ public class Alien extends Projectile {
 			mX *= -1;
 		}
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see desertBlasters_part2_projectiles.Projectile#draw(java.awt.Graphics)
-	 */
-	@Override
-	public void draw(Graphics g) {
-		g.drawImage(alienImage, leftEdge, topEdge, null);
-	}
 }
